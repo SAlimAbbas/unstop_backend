@@ -101,13 +101,14 @@ app.get("/all-seats", async (req, res) => {
 });
 
 app.delete("/deleteseats", async (req, res) => {
-  try {
-    await Seat.updateMany({ booked: true }, { booked: false });
-    res.status(200).json({ message: "Seats cleared successfully" });
-  } catch (error) {
-    console.error("Error clearing seats:", error);
-    res.status(500).json({ error: "An error occurred while clearing seats" });
-  }
+  // try {
+  //   await Seat.updateMany({ booked: true }, { booked: false });
+  //   res.status(200).json({ message: "Seats cleared successfully" });
+  // } catch (error) {
+  //   console.error("Error clearing seats:", error);
+  //   res.status(500).json({ error: "An error occurred while clearing seats" });
+  // }
+  initializeCoach();
 });
 
 app.listen(port, () => {
