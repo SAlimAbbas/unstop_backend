@@ -33,7 +33,7 @@ async function initializeCoach() {
 }
 
 // Call the function to initialize the seat data
-initializeCoach();
+// initializeCoach();
 
 // API endpoint for reserving seats
 app.post("/seats", async (req, res) => {
@@ -112,5 +112,6 @@ app.delete("/deleteseats", async (req, res) => {
 });
 
 app.listen(port, () => {
+  initializeCoach();
   console.log(`Server running on http://localhost:${port}`);
 });
